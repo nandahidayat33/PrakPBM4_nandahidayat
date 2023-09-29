@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    BusinessCard()
+                    ProyekNandaCard()
                 }
             }
         }
@@ -40,13 +40,15 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun BusinessCard() {
+fun ProyekNandaCard() {
     // Layout kolom dengan modifier dan warna background
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
-            .background(Color.White)
+            .background(Color.White),
+        verticalArrangement = Arrangement.Center, // Menyusun elemen vertikal ke tengah
+        horizontalAlignment = Alignment.CenterHorizontally // Menyusun elemen horizontal ke tengah
     ) {
         // Elemen gambar untuk foto progfil dengan modifier
         MyImage(imageResource = R.drawable.profil)
@@ -54,7 +56,7 @@ fun BusinessCard() {
         // Elemen Spacer
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Elemen text untuk nama, no.hp, sosial media, dan email dengan modifier
+        // Elemen text untuk nama dengan modifier
         Text(
             text = "Nanda Hidayat",
             modifier = Modifier.padding(8.dp),
@@ -62,6 +64,7 @@ fun BusinessCard() {
             color = Color.Black
         )
 
+        // Elemen text untuk nomor telepon dengan modifier
         Text(
             text = "Phone: +628 123 456 789",
             modifier = Modifier.padding(8.dp),
@@ -69,21 +72,24 @@ fun BusinessCard() {
             color = Color.Gray
         )
 
+        // Elemen text untuk Twitter dengan modifier
         Text(
-            text = "Twitter: @Nannn",
+            text = "Twitter: @Nannnnyatiga",
             modifier = Modifier.padding(8.dp),
             fontSize = 16.sp,
             color = Color.Gray
         )
 
+        // Elemen text untuk email dengan modifier
         Text(
-            text = "Email: nandahidayatttnyatiga@gmail..com",
+            text = "Email: nandahidayatttnyatiga@gmail.com",
             modifier = Modifier.padding(8.dp),
             fontSize = 16.sp,
             color = Color.Gray
         )
     }
 }
+
 
 @Composable
 fun MyImage(imageResource: Int) {
@@ -99,8 +105,8 @@ fun MyImage(imageResource: Int) {
 
 @Preview(showBackground = true)
 @Composable
-fun BusinessCardPreview() {
+fun NandaPreview() {
     PrakPBM4Theme {
-        BusinessCard()
+        ProyekNandaCard()
     }
 }
